@@ -10,4 +10,4 @@ elif smth == '*':
 elif smth == '/':
     print(x / y)
 else:
-    print('?')
+    print('non')
