@@ -1,3 +1,5 @@
+import os
+
 def function_input(result = None):
 
     if result != None:
@@ -21,7 +23,7 @@ def function_input(result = None):
     number2 = None
     while number2 == None or not float(number2):
         try:
-            number2 = float(input("number2"))
+            number2 = float(input("number2: "))
         except ValueError:
             print("Choose correct number 2: ")
 
@@ -37,9 +39,10 @@ def function_operator(number1, operator, number2):
             result = (number1 / number2)
         elif operator == '*':
             result = (number1 * number2)
+        elif operator == '**':
+            result = (number1 ** number2)
         else:
-            print(input('choose +, -, /, *: '))
-        print(result)
+            return
         return result
 
 result = None
@@ -47,7 +50,8 @@ result = None
 while True:
     number1, operator, number2 = function_input(result)
     result = function_operator(number1, operator, number2)
-
+    os.system("clear")
+    print(result)
 
 
     # function_input()
